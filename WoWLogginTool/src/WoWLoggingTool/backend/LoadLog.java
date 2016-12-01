@@ -3,21 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package backend;
+package WoWLoggingTool.backend;
 
-import java.util.Scanner;
 import javafx.collections.ObservableList;
 
 /**
  *
- * @author frede
+ * @author Daniel Johansen
  */
-public class LoadRaid implements LoadFile<Raid> {
+public class LoadLog implements LoadFile<Log> {
 
     @Override
-    public ObservableList<Raid> loadObservableList(String fileToRead) {
+    public ObservableList<Log> loadObservableList(String fileToRead) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-
+    
 }

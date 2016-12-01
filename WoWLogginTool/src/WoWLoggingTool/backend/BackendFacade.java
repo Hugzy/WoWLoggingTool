@@ -3,16 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package backend;
-
-import javafx.collections.ObservableList;
+package WoWLoggingTool.backend;
 
 /**
  *
  * @author Danieln Johansen
  */
-public interface LoadFile<T> {
+public class BackendFacade implements IConnectGui {
 	
-    public ObservableList<T> loadObservableList(String fileToRead);
-    
 }

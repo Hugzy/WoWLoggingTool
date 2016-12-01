@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package backend;
+package WoWLoggingTool.backend;
 
 /**
  *
  * @author Daniel Johansen
  */
-public class Raider extends Entity {
+public class RaidBoss extends Entity {
     
-    public Raider(String name){
+    RaidBoss(String name){
         super.name=name;
-    } 
+    }
 }
