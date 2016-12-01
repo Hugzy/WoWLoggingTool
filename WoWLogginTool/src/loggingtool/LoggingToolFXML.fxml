@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loggingtool.LoggingToolFXMLController">
+   <children>
+      <ToolBar prefHeight="40.0" prefWidth="600.0">
+        <items>
+          <Button fx:id="homeBtn" mnemonicParsing="false" onAction="#handleHomeBtn" text="Home" />
+        </items>
+      </ToolBar>
+      <AnchorPane fx:id="startMenuPane" layoutY="40.0" prefHeight="367.0" prefWidth="600.0" visible="false">
+         <children>
+            <Label layoutX="194.0" layoutY="14.0" prefHeight="53.0" prefWidth="213.0" text="Logging Tool">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Button fx:id="createNewBtn" layoutX="235.0" layoutY="88.0" mnemonicParsing="false" onAction="#handleMainMenuBtns" prefHeight="40.0" prefWidth="130.0" text="Create new" />
+            <Button fx:id="reviewExistingBtn" layoutX="235.0" layoutY="144.0" mnemonicParsing="false" onAction="#handleMainMenuBtns" prefHeight="40.0" prefWidth="130.0" text="Review Existing" />
+            <Button fx:id="quitBtn" layoutX="235.0" layoutY="248.0" mnemonicParsing="false" onAction="#handleMainMenuBtns" prefHeight="40.0" prefWidth="130.0" text="Quit" />
+            <Button fx:id="settingsBtn" layoutX="235.0" layoutY="195.0" mnemonicParsing="false" onAction="#handleMainMenuBtns" prefHeight="40.0" prefWidth="130.0" text="Settings" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="createNewPane" layoutY="40.0" prefHeight="367.0" prefWidth="600.0" visible="false">
+         <children>
+            <TextField fx:id="fileNameTxtField" layoutX="258.0" layoutY="52.0" prefHeight="31.0" prefWidth="178.0" />
+            <Button fx:id="createLogBtn" layoutX="211.0" layoutY="272.0" mnemonicParsing="false" onAction="#handleCreateLog" prefHeight="46.0" prefWidth="178.0" text="Create log" />
+            <ChoiceBox fx:id="raidChoiceBox" layoutX="258.0" layoutY="119.0" prefHeight="31.0" prefWidth="178.0" />
+            <ChoiceBox fx:id="difficultyChoiceBox" layoutX="258.0" layoutY="186.0" prefHeight="31.0" prefWidth="178.0" />
+            <Label layoutX="165.0" layoutY="54.0" prefHeight="27.0" prefWidth="88.0" text="File name">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="185.0" layoutY="121.0" prefHeight="27.0" prefWidth="49.0" text="Raid">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="169.0" layoutY="188.0" prefHeight="27.0" prefWidth="75.0" text="Difficulty">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="reviewExistingPane" layoutY="40.0" prefHeight="367.0" prefWidth="600.0" visible="false">
+         <children>
+            <ListView fx:id="tryListView" layoutX="23.0" layoutY="38.0" prefHeight="306.0" prefWidth="139.0" />
+            <TextArea fx:id="tryDescTxtArea" layoutX="359.0" layoutY="122.0" prefHeight="225.0" prefWidth="213.0" />
+            <ChoiceBox fx:id="fightChoiceBox" layoutX="422.0" layoutY="37.0" prefWidth="150.0" />
+            <Label layoutX="422.0" layoutY="18.0" text="Pick fight" />
+            <Label layoutX="64.0" layoutY="13.0" text="Pick try">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="359.0" layoutY="105.0" text="Description of try" />
+            <ListView fx:id="reviewRaidGrpListView" layoutX="170.0" layoutY="38.0" prefHeight="306.0" prefWidth="139.0" />
+            <Label layoutX="195.0" layoutY="13.0" text="Raid Group">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="updateNewPane" layoutY="40.0" prefHeight="367.0" prefWidth="600.0" visible="false">
+         <children>
+            <TextArea fx:id="newTryDescrTxtArea" layoutX="24.0" layoutY="207.0" prefHeight="148.0" prefWidth="396.0" text="Description of the try" />
+            <ChoiceBox fx:id="newBossChoiceBox" layoutX="24.0" layoutY="23.0" prefHeight="25.0" prefWidth="170.0" />
+            <Button fx:id="addTryBtn" layoutX="456.0" layoutY="216.0" mnemonicParsing="false" onAction="#handleAddTryBtn" prefHeight="65.0" prefWidth="130.0" text="Add try" />
+            <Button fx:id="saveLogBtn" layoutX="456.0" layoutY="288.0" mnemonicParsing="false" onAction="#handleSaveLog" prefHeight="65.0" prefWidth="130.0" text="Save log" />
+            <Label layoutX="24.0" layoutY="7.0" text="Pick boss" />
+            <Label layoutX="24.0" layoutY="184.0" text="Try number:" />
+            <Label fx:id="lblTryCounter" layoutX="96.0" layoutY="184.0" text="0" />
+            <ListView fx:id="allRaidersListView" layoutX="231.0" layoutY="24.0" prefHeight="172.0" prefWidth="139.0" />
+            <ListView fx:id="currentRaidGrpListView" layoutX="447.0" layoutY="24.0" prefHeight="172.0" prefWidth="139.0" />
+            <Button fx:id="addRaiderToGrpBtn" layoutX="377.0" layoutY="73.0" mnemonicParsing="false" onAction="#handleAddRemoveBtns" prefHeight="31.0" prefWidth="59.0" text="Add" />
+            <Button fx:id="removeRaiderFromGrpBtn" layoutX="377.0" layoutY="116.0" mnemonicParsing="false" onAction="#handleAddRemoveBtns" prefHeight="31.0" prefWidth="59.0" text="Remove" />
+            <Label layoutX="273.0" layoutY="7.0" text="All Raiders" />
+            <Label layoutX="470.0" layoutY="6.0" text="Current Raid Group" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="reviewExistingChooseLogPane" layoutY="40.0" prefHeight="367.0" prefWidth="600.0">
+         <children>
+            <Button fx:id="reviewSelectedLogBtn" layoutX="354.0" layoutY="164.0" mnemonicParsing="false" onAction="#handleSelectLogBtn" prefHeight="40.0" prefWidth="130.0" text="Review selected log" />
+            <Label layoutX="92.0" layoutY="1.0" text="Pick a log">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TableView fx:id="reviewLogTableView" layoutX="20.0" layoutY="35.0" prefHeight="298.0" prefWidth="221.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+                <TableColumn prefWidth="75.0" text="C2" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="settingsPane" layoutY="40.0" prefHeight="361.0" prefWidth="600.0" visible="false">
+         <children>
+            <ListView fx:id="raidersListView" layoutX="14.0" layoutY="33.0" prefHeight="314.0" prefWidth="221.0" />
+            <Label layoutX="95.0" layoutY="6.0" text="Raiders">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField layoutX="397.0" layoutY="33.0" prefHeight="25.0" prefWidth="170.0" />
+            <Label layoutX="300.0" layoutY="37.0" text="New Raider name" />
+            <Button fx:id="addRaiderBtn" layoutX="397.0" layoutY="79.0" mnemonicParsing="false" onAction="#handleAddRaiderBtn" prefHeight="40.0" prefWidth="170.0" text="Add Raider" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
