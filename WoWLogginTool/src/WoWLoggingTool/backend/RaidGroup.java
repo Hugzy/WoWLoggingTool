@@ -22,6 +22,10 @@ public class RaidGroup {
         this.raidGroupSize = raidGroupSize;
         raidGroup = FXCollections.observableArrayList();  
     }
+	public RaidGroup(int raidGroupSize, ObservableList<Raider> raiders ){
+        this.raidGroupSize = raidGroupSize;
+        raidGroup = raiders; 
+    }
 
     /**
      * @return the raidGroup

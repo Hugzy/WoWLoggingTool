@@ -106,6 +106,7 @@ public class LoggingToolFXMLController implements Initializable {
         reviewExistingPane.setVisible(false);
         updateNewPane.setVisible(false);
         reviewExistingChooseLogPane.setVisible(false);
+		settingsPane.setVisible(false);
     }
 
     @FXML

@@ -10,12 +10,14 @@ package WoWLoggingTool.backend;
  * @author Daniel Johansen
  */
 public enum Difficulty {
-    NORMAL(30), HEROIC(30), MYTHIC(20);
+    NORMAL(30,"normal"), HEROIC(30,"heroic"), MYTHIC(20,"mythic");
     
     private final int MAXRAIDSIZE;
+	private String difficultyString;
     
-    private Difficulty(int maxRaidSize){
+    private Difficulty(int maxRaidSize, String difficultyString){
         this.MAXRAIDSIZE = maxRaidSize;
+		this.difficultyString = difficultyString;
     }
 
     /**
@@ -24,5 +26,10 @@ public enum Difficulty {
     public int getMAXRAIDSIZE() {
         return MAXRAIDSIZE;
     }
+	
+	@Override
+	public String toString(){
+		return this.difficultyString;
+	}
     
 }

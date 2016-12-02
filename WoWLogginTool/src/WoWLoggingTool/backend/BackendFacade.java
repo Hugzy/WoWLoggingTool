@@ -10,5 +10,11 @@ package WoWLoggingTool.backend;
  * @author Danieln Johansen
  */
 public class BackendFacade implements IConnectGui {
-	
+
+	public void test() {
+		LoadLog ll = new LoadLog();
+		LoadRaid lr = new LoadRaid();
+		LoadRaider lred = new LoadRaider();
+		ll.loadObservableList("testloadlog.txt", lr.loadObservableList("testraid.txt"), lred.loadObservableList("testraiders.txt"));
+	}
 }
